@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="GraphView.Node"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GraphView"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="100">
+    <Canvas x:Name="NodeCanvas">
+        <Rectangle x:Name="Title" Height="26" Panel.ZIndex="3" Focusable="True" Stroke="Black" Width="38" Cursor="Hand" Canvas.Left="16"/>
+        <Label x:Name="Label" Content="Label" Panel.ZIndex="2" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFECECEC" Cursor="Hand" Canvas.Left="16" >
+            <Label.Effect>
+                <DropShadowEffect ShadowDepth="3"/>
+            </Label.Effect>
+        </Label>
+        <Rectangle Height="26" Panel.ZIndex="1" Focusable="True" Fill="#FF2E2E2E" Stroke="Black" Width="38" Canvas.Left="16"/>
+        <Rectangle x:Name="Body" Fill="#FF2E2E2E" Height="58" Stroke="Black" Canvas.Top="25" Width="70"/>
+        <Rectangle x:Name="InManager" Fill="DeepSkyBlue" Height="26" Stroke="Black" Width="16">
+            <Rectangle.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="cpmi" Header="Create Port" />
+                </ContextMenu>
+            </Rectangle.ContextMenu>
+        </Rectangle>
+        <Rectangle x:Name="OutManager" Fill="Orchid" Height="26" Canvas.Left="54" Stroke="Black" Width="16">
+            <Rectangle.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="cpmo" Header="Create Port" />
+                </ContextMenu>
+            </Rectangle.ContextMenu>
+        </Rectangle>
+    </Canvas>
+</UserControl>
